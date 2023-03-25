@@ -1,32 +1,28 @@
-# Sweet Treats
+# Queens Critique
 ### Concept
-Sweet Treats is an online site where customer is able to order any customized dessert they want. Customers will be able to extensively describe how they want their dessert made, advise of allergies, and select their budget when submitting.
+Queens Critique is an online review site where users are able to review their favorite or least favorite restaurants in Queens, NY.
 
-### Backend Technologies Used
+### Frontend Technologies Used
 
-* Django
-* Bit.io
-* Python
-* PostgreSQL
-* Render.com
+* Vue
+* HTML
+* CSS or Tailwind
+* JavaScript
 
-
-### Model
-
-|Name|Data Type|
-|----|----|
-|id| Serial |
-| Dessert Name | varchar(50)
-| Allergies | varchar(50)|
-| Dessert Details | varchar(250) |
-| Email | varchar(50)|
-| Budget | varchar(6)|
-
-### Routes
+### Routes and CRUD functions
 |Path|Action| Description
 |----|----|----|
-|'/'| Main | Homepage displays images of previous desserts made and a button that takes user to the create route.
-|'/sweettreats/create'| Create| Create page will allow user to create a customized order.
-|'/sweettreats/:id' | Show | Show page will display customized order details and will give customers the option to update and/or delete.
-|'/sweettreats/update/:id' | Update | Will update the customized order.
-|'/sweettreats/delete/:id' | Delete | Will delete the customized order.
+|'/'| Main | Homepage will have a simple display that will include a search bar for users to look for specific restaurants.
+|'/writeareview'| Create| Create page will allow user to create a customized order.
+|'/:id' | Show | Show page will display a specific restaurant and reviews along with it.
+|'/critique/update/:id' | Update | Will update the review.
+|'/critique/delete/:id' | Delete | Will delete the review.
+
+
+### Mockups
+
+##### Landing Page
+![Landing Page](https://i.imgur.com/LcwLHWE.png)
+
+##### Show Page
+![Create Page](https://i.imgur.com/v8aSpPH.png)
