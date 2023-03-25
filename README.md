@@ -4,9 +4,8 @@ Queens Critique is an online review site where users are able to review their fa
 
 ### Frontend Technologies Used
 
-* Vue
+* Tailwind (new)
 * HTML
-* CSS or Tailwind
 * JavaScript
 
 ### Routes and CRUD functions
