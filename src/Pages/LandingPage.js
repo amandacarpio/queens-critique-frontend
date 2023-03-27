@@ -1,7 +1,7 @@
-import {Nav} from './Nav'
+import {Nav} from '../Components/Nav'
 import logo from '../logo.png'
 import '../logo.css'
-import { Search } from './Search'
+import { SearchBar } from '../Components/SearchBar'
 
 
 export function LandingPage(){
@@ -10,7 +10,7 @@ export function LandingPage(){
             {/* will need a flexbox here */}
             <img className='logoCss' src={logo} alt='logo'/>
             <Nav/>
-            <Search/>
+            <SearchBar/>
         </div>
     )
 }

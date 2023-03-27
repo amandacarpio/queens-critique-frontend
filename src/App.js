@@ -1,8 +1,12 @@
-import {LandingPage} from './Landing-Page/Index'
-
+import {Outlet} from "react-router-dom"
+import {Nav} from './Components/Nav'
+ 
 function App() {
   return (
-    <LandingPage/>
+    <div className='App'>
+    <Nav/>
+    <Outlet/>
+    </div>
   );
 }
 

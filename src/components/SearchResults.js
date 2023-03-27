@@ -1,15 +1,10 @@
-import React from "react";
 
-export function SearchResults(props){
-    if(~props.businesses || !props.businesses.length){
-        return(<div></div>);
-    }
 
-    const searchResults = props.businesses.map(b => <SearchResult key={b.id} businesses={b}/>)
 
-    return(
+export function SearchResults() {
+    return (
         <div>
-            {searchResults}
+            <h1>A subtitle of the search term will appear here</h1>
         </div>
     )
 }
