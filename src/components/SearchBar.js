@@ -5,6 +5,9 @@ export function SearchBar(props){
     const [location, setLocation] = useState(props.location)
 
     function hitSearch(event) {
+        if(typeof props.search === 'function'){
+            props.search(keyword, location)
+        }
         console.log(keyword, location)
         event.preventDefault()
     }

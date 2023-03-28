@@ -1,16 +1,19 @@
-import {Nav} from '../Components/Nav'
-import logo from '../logo.png'
-import '../logo.css'
 import { SearchBar } from '../Components/SearchBar'
-
+import { useNavigate } from 'react-router-dom'
 
 export function LandingPage(){
+
+    const history = useNavigate()
+    
+    function hitSearch(keyword, location) {
+        const encodedKeyword = encodeURI(keyword)
+        const encodedLocation = encodeURI(location)
+        history(`/writeareview?find_desc=${encodedKeyword}&find_loc=${encodedLocation}`)
+    }
+
     return(
         <div>
-            {/* will need a flexbox here */}
-            <img className='logoCss' src={logo} alt='logo'/>
-            <Nav/>
-            <SearchBar/>
+            <SearchBar search={hitSearch}/>
         </div>
     )
 }
