@@ -1,19 +1,16 @@
-import { SearchBar } from '../Components/SearchBar'
-import { useNavigate } from 'react-router-dom'
+// import { SearchBar } from '../Components/SearchBar'
+import { Link, useLoaderData } from 'react-router-dom'
 
 export function LandingPage(){
-
-    const history = useNavigate()
-    
-    function hitSearch(keyword, location) {
-        const encodedKeyword = encodeURI(keyword)
-        const encodedLocation = encodeURI(location)
-        history(`/writeareview?find_desc=${encodedKeyword}&find_loc=${encodedLocation}`)
-    }
-
+    const restaurants = useLoaderData()
     return(
         <div>
-            <SearchBar search={hitSearch}/>
+            {/* <SearchBar search={hitSearch}/> */}
+            {restaurants.businesses.map((restaurant) => (
+                <Link to={`/restaurant/${restaurant.id}`}><p>{restaurant.name}</p></Link>
+                
+
+            ))}
         </div>
     )
 }

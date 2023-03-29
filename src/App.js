@@ -1,16 +1,11 @@
-import {Link, Outlet} from "react-router-dom"
+import {Link} from "react-router-dom"
 import {Nav} from './Components/Nav'
 import logo from './logo.png'
 import './logo.css'
 import { useState, useEffect } from 'react'
+import { Form } from "react-router-dom"
  
 function App() {
-
-  <div className='App'>
-  <Link to='/'><img className='logoCss' src={logo} alt='logo'/></Link>
-  <Nav/>
-  <Outlet/>
-  </div>
 
   const API_KEY = process.env.REACT_APP_API_KEY;
   const API_URL= process.env.REACT_APP_API_URL;
@@ -77,6 +72,8 @@ function App() {
       <div>
         <h1>{business.name}</h1>
         <p onClick={() => {oneBusiness(business.id)}}>{business.id}</p>
+        <img src={business.image_url} alt="restaurants"></img>
+        {business.categories.map((categories) => <p>{categories.title}</p>)}
       </div>
     )
   }
@@ -84,6 +81,8 @@ function App() {
   // this is where I'm actually displaying and rendering all businesses onto the page
   return (
     <div className="App">
+      <Link to='/'><img className='logoCss' src={logo} alt='logo'/></Link>
+      <Nav/>
       {
         businesses ?
         businesses.map((business, index) => {
@@ -98,8 +97,6 @@ function App() {
         // 
         singleBusiness ? 
         <div>
-          <Link to='/'><img className='logoCss' src={logo} alt='logo'/></Link>
-          <Nav/>
           <h1>{singleBusiness.name}</h1>
           <img src={singleBusiness.image_url} alt="restaurants"></img>
           <p>{singleBusiness.id}</p>
@@ -107,6 +104,15 @@ function App() {
 
           {singleBusiness.categories.map((categories) => <p>{categories.title}</p>)}
 
+          {/* form for comments */}
+          <Form action="/review" method="post" reloadDocument={false}>
+            <input type="text" name="name" placeholder="What is your name?"></input>
+            <input type="text" name="city" placeholder="Select where you're from"></input>
+            <input type="number" name="rating" placeholder="What is your name?"></input>
+            <input type="text" name="review" placeholder="Tell us your thoughts?"></input>
+            <input type="hidden" name="yelpId" value={singleBusiness.id}></input>
+            <input type="submit"></input>
+          </Form>
 
           <button onClick={handleBack}>Back</button>
           </div>
