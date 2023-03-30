@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom"
 import ListOfBusinesses from "../Components/ListOfBusinesses"
 
-export default function Index(props) {
+export default function Index() {
     const restaurants = useLoaderData()
     console.log(restaurants)
     const {businesses} = restaurants

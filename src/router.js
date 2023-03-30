@@ -8,7 +8,7 @@ import Index from "./Pages/Index"
 const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={<App/>}>
             <Route path="" element={<Index/>} loader={indexLoader}/>
-            {/* <Route path=":id" element={<Show/>} loader={showLoader}/> */}
+            <Route path=":id" element={<Show/>} loader={showLoader}/>
             <Route path="review" action={createAction}/>
             <Route path="update" action={updateAction}/>
             <Route path="delete" action={deleteAction}/>
