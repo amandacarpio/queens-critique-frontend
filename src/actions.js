@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom"
 
-const BACKEND_URL = "https://queens-critique-site.onrender.com"
+const BACKEND_URL = "https://queens-critique-site.onrender.com/comments/"
 
 export const createAction = async({request}) => {
 
@@ -40,7 +40,7 @@ export const updateAction = async({request, params}) => {
     }
     console.log(updatedAction)
 
-    await fetch(BACKEND_URL + `/comments/${id}/restaurant_comments/`, {
+    await fetch(BACKEND_URL + `${id}/restaurant_comments/`, {
         method: "put",
         headers: {
             "Content-Type": "application/json"
