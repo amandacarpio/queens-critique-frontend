@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 import ListOfBusinesses from "../Components/ListOfBusinesses"
 
 export default function Index() {

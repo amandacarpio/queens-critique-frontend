@@ -1,6 +1,6 @@
 export function Nav(){
     return (
-        <div id="navBar">
+        <div id="navBar" className="bg-red px-2 justify-between items-center">
                 <span>Local Favorites</span>
                 <span>Write a Review</span>                
                 <span>Events</span>

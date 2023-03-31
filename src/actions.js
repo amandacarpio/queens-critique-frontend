@@ -38,15 +38,16 @@ export const updateAction = async({request, params}) => {
         review: formData.get("review"),
         yelpId: formData.get("yelpId"),
     }
-    console.log(updatedAction)
+    console.log("new data", updatedAction)
 
-    await fetch(BACKEND_URL + `${id}/restaurant_comments/`, {
-        method: "put",
+    let response = await fetch(BACKEND_URL + `${id}/individual_review/`, {
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(updatedAction)
     })
+    console.log(response)
     return redirect("/")
 }
 

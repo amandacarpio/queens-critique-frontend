@@ -11,6 +11,7 @@ export default function Show(props) {
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error(error));
+      //eslint-disable-next-line
     }, []);
     
     // {fetch(`https://queens-critique-site.onrender.com/comments/${id}/restaurant_comments/`)
@@ -24,18 +25,21 @@ export default function Show(props) {
           <img src={singleBusiness.image_url} alt="restaurants"></img>
           <p>{singleBusiness.id}</p>
           <p>{singleBusiness.price}</p>
-          {singleBusiness.categories.map((categories) => <p>{categories.title}</p>)}
+          {singleBusiness.categories.map((categories, index) => <p key={index}>{categories.title}</p>)}
           <h3>Critique's...</h3>
             
             {data.map((review) => ( 
                 <>  
-                <p>{review.name}</p>
-                <p>{review.city}</p>
+                <Link to={`/update/${review.id}`}><button>Update Comment</button></Link>
+                <h5>{review.name}</h5>
+                <h5>{review.city}</h5>
+                <h5>{review.rating} stars</h5>
                 <p>{review.review}</p>
                 </>
             ))}
 
           {/* form for comments */}
+          <h3>Add your critique</h3>
           <Form action="/review" method="post">
             <div className="reviewInfo">
             <input type="text" name="name" placeholder="Name"></input>
