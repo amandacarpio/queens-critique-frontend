@@ -9,7 +9,7 @@ module.exports = {
       'poppins': ['Poppins', 'sans-serif']
     },
     fontSize: {
-      'xl': '2rem'
+      'xl': '3rem'
     }
   },
   plugins: [],

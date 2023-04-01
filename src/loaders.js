@@ -30,5 +30,5 @@ export const individualCommentLoader = async({params}) => {
     const response = await fetch(`https://queens-critique-site.onrender.com/comments/${params.id}/individual_review/`)//, {...options, Authorization: null})
     const review = await response.json()
     console.log("response", review)
-    return review
+    return review[0]
 }

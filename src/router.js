@@ -13,7 +13,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path="update/:id" element={<Update/>} action={updateAction} loader={individualCommentLoader}/>
             <Route path="review" action={createAction}/>
             {/* <Route path="update/:id" action={updateAction}/> */}
-            <Route path="delete" action={deleteAction}/>
+            <Route path="delete/:id" action={deleteAction}/>
         </Route>
 ))
 

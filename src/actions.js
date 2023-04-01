@@ -28,7 +28,7 @@ return redirect("/")
 export const updateAction = async({request, params}) => {
 
     const formData = await request.formData()
-    console.log(updateAction)
+    // console.log(updateAction)
 
     const id = params.id
     const updatedAction = {
@@ -40,22 +40,22 @@ export const updateAction = async({request, params}) => {
     }
     console.log("new data", updatedAction)
 
-    let response = await fetch(BACKEND_URL + `${id}/individual_review/`, {
-        method: "PUT",
+    await fetch(BACKEND_URL + `${id}/individual_review_put/`, {
+        method: "put",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(updatedAction)
     })
-    console.log(response)
-    return redirect("/")
+    // console.log(response)
+    return redirect("/" + updatedAction.yelpId)
 }
 
 export const deleteAction = async({params}) => {
 
     const id = params.id
 
-    await fetch(BACKEND_URL + `/comments/${id}/restaurant_comments/`, {
+    await fetch(BACKEND_URL + `${id}/individual_review_delete/`, {
         method: "delete",
     })
 

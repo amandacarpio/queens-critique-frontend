@@ -6,9 +6,9 @@ export default function Index() {
     console.log(restaurants)
     const {businesses} = restaurants
     return (
-        <div>
+        <div className="w-10/12 flex flex-wrap justify-evenly mx-auto shadow-xl">
             {businesses.map((business, index) => {
-                return <div key={index}>
+                return <div key={index} className="mx-12 shadow-lg">
                 <ListOfBusinesses business={business}/>
                 </div>
             })}
