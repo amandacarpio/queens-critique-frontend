@@ -1,5 +1,5 @@
 import {Link, Outlet} from "react-router-dom"
-import {Nav} from './Components/Nav'
+import Nav from './Components/Nav'
 import logo from './logo.png'
 import './logo.css'
 // import { useState, useEffect } from 'react'
