@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom"
-import ListOfBusinesses from "../Components/ListOfBusinesses"
+import ListOfBusinesses from "../components/ListOfBusinesses"
 
 export default function Index() {
     const restaurants = useLoaderData()

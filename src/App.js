@@ -1,9 +1,7 @@
 import {Link, Outlet} from "react-router-dom"
-import Nav from './Components/Nav'
+import Nav from './components/Nav'
 import logo from './logo.png'
 import './logo.css'
-// import { useState, useEffect } from 'react'
-// import { Form } from "react-router-dom"
 import './index.css'
  
 function App() {
